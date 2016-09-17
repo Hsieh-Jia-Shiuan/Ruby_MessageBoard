@@ -2,6 +2,7 @@
 
 <div class="row">
   <div class="col-md-8 well">
+    <%= render partial: "categories/category", collection: @post.categories %>
     <h3><%= @post.title %></h3>
     <p>
       <%= @post.content %>
@@ -20,7 +21,7 @@
         <%= comment.content %>
       </p>
       <br>
-      <small>posted by </small><%= " #{@post.user.name}" %>
+      <small>commented by </small><%= "#{comment.user.name}" %>
     </div>
   </div>
 <% end %>

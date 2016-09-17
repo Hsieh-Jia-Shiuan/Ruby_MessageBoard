@@ -3,9 +3,9 @@
 <div class="well col-md-6">
   <%= form_for @category do |c| %>
     <div class="form-group">
-    	<%= c.label :category_name %>
+    	<%= c.label :category_title %>
     	<br>
-    	<%= c.text_field :name %>
+    	<%= c.text_field :title %>
     </div>
     <%= c.submit 'Create Category', class: 'btn btn-primary' %>
   <% end %>

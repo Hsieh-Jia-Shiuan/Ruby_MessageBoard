@@ -6,6 +6,8 @@
     <p>
       <%= @post.content %>
     </p>
+    <br>
+    <small>posted by </small><%= " #{@post.user.name}" %>
   </div>
 </div>
 
@@ -17,6 +19,8 @@
       <p>
         <%= comment.content %>
       </p>
+      <br>
+      <small>posted by </small><%= " #{@post.user.name}" %>
     </div>
   </div>
 <% end %>

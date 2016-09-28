@@ -1,9 +1,13 @@
 <%= render 'shared/title', title: 'All Categories'%>
 
-<% @categories.each do |category| %>
 <div class='row'>
   <div class='well col-md-6'>
-    <p><%= category.title %></p>
+    <%= render partial: "categories/category", collection: @categories %>
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <%= link_to 'Back to create categooy', new_category_path ,class: 'btn btn-danger'%>
 </div>
-<% end %>

@@ -1,3 +1,14 @@
+<% flash.each do |key, value| %>
+  <% if key == "errorcomment"%>
+    <div class="alert alert-danger alert-dismissible" role="alert" style="color:red">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    <%= value %>
+  </div>
+  <% end %>
+<% end %>
+
 <%= render 'shared/title', title: "#{@post.title}"%>
 
 <div class="row">
@@ -16,7 +27,7 @@
 
 <% @post.comments.each do |comment| %>
   <div class="row">
-    <div class="col-md-6 well">
+    <div class="well col-md-6">
       <p>
         <%= comment.content %>
       </p>
@@ -31,18 +42,13 @@
   <h4>Leave a comment:</h4>
   <%= form_for [@post, @comment] do |f| %>
     <div class="row">
-      <%= f.text_area :content, rows: 3, class: 'col-md-4' %>
-      <div class="col-md-2">
-        <%= f.submit 'Create Comment', class: 'btn btn-primary' %>
-      </div>
+      <%= f.text_area :content, rows: 3, size: "70x5" %>
+      <br>
+      <%= f.submit 'Create Comment', class: 'btn btn-primary' %>
+      &nbsp;&nbsp;&nbsp;
+      <%= link_to 'Go back to all posts', posts_path ,class: 'btn btn-danger'%>
+      <p>
     </div>
-    <br>
   <% end %>
 
 <% end %>
-
-<hr>
-
-<div class="row">
-  <%= link_to 'go back to all posts', posts_path %>
-</div>

@@ -1,12 +1,21 @@
 <%= render 'shared/title', title: "Create New Category"%>
 
 <div class="well col-md-6">
+  <% flash.each do |key, value| %>
+    <% if key == "errorcategory"%>
+      <div class="alert alert-danger" role="alert" style="color:red"><%= value %></div>
+    <% end %>
+  <% end %>
+
   <%= form_for @category do |c| %>
     <div class="form-group">
-    	<%= c.label :category_title %>
+    	<%= label_tag :category_title %>
+      <sup class="required" title="Required" style="color:red">*</sup>
     	<br>
     	<%= c.text_field :title %>
     </div>
     <%= c.submit 'Create Category', class: 'btn btn-primary' %>
+    &nbsp;&nbsp;&nbsp;
+    <%= link_to 'All Category', categories_path ,class: 'btn btn-info'%>
   <% end %>
 </div>

@@ -7,7 +7,9 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(@post)
     else
-      render 'posts/show'
+      flash[:errorcomment] = "Please enter your comment!"
+      # render 'posts/show'
+      redirect_to post_path(@post)
     end
 
   end

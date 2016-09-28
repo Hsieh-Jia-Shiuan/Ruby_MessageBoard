@@ -19,10 +19,12 @@ class PostsController < ApplicationController
     post.user = current_user
 
     #如果成功存進資料庫，就導回 index 頁面，失敗就再顯示一次表單
-    if post.save!
+    if post.save
       redirect_to posts_path
     else
-      render :new
+      flash[:errornewpost] = "Please enter your post's title and content!"
+      redirect_to new_post_path
+      # render :new
     end
   end
 

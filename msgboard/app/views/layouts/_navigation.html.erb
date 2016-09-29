@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-static-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <%= link_to image_tag("M.png", size: "40x40", :style => "margin-top:-10px; margin-right: -10px;"),  root_path, :class => 'navbar-brand' %>
@@ -36,3 +36,21 @@
     </div>
   </div>
 </nav>
+
+<div class="navbar navbar-default navbar-fixed-bottom" style="height: 50px">
+  <div class="container_nav">
+    <div class="navbar-text pull-left">
+      <p>© 2016, NTU-ROR-274, HJS's Project. </p>
+    </div>
+  </div>
+</div>
+
+<div class="navbar navbar-inverse rolldown" style="height: 50px">
+  <div class="container_rolldown">
+    <div class="navbar-text pull-left">
+      <li><%= link_to 'New Category', new_category_path %></li>
+      <!-- <li role="presentation"><a href="/categories/1/posts">分類1</a></li> -->
+    </div>
+  </div>
+</div>
+

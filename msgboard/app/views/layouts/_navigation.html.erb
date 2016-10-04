@@ -13,7 +13,7 @@
       <ul class="nav navbar-nav">
         <% if logged_in? %>
           <li><%= link_to 'New Post', new_post_path %></li>
-          <li><%= link_to 'New Category', new_category_path %></li>
+          <!-- <li><%= link_to 'New Category', new_category_path %></li> -->
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -48,9 +48,14 @@
 <div class="navbar navbar-inverse rolldown" style="height: 50px">
   <div class="container_rolldown">
     <div class="navbar-text pull-left">
-      <li><%= link_to 'New Category', new_category_path %></li>
-      <!-- <li role="presentation"><a href="/categories/1/posts">分類1</a></li> -->
+      <h4>
+        <% getcategory_all.each do |category| %>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= link_to "#{category.title}", href = "/categories/#{category.id}" %>
+        <% end %>
+      </h4>
     </div>
   </div>
 </div>
+
 

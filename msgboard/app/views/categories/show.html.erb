@@ -1,0 +1,16 @@
+<%= render 'shared/title', title: "Post >>> #{@category.title}"%>
+
+<% @posts.each do |post| %>
+  <div class="row">
+    <div class="well col-md-8">
+      <%= render partial: "categories/category", collection: post.categories %>
+      <p>
+        <h3><%= link_to "#{post.title}", post_path(post) %></h3>
+      </p>
+      <p>
+        <%= post.content %>
+      </p>
+      <br>
+    </div>
+  </div>
+<% end %>

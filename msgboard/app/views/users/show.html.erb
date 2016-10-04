@@ -5,7 +5,7 @@
 <% @user.posts.each do |post| %>
 
 <div class="row">
-  <div class="col-md-8 well">
+  <div class="col-md-6 well">
     <h3><%= post.title %></h3>
     <p>
       <%= post.content %>
@@ -31,4 +31,7 @@
   </div>
 <% end %>
 
-<%= link_to 'Back', root_path %>
+<%= link_to 'Back to Post List', posts_path ,class: 'btn btn-danger'%>
+  <br>
+  <br>
+  <br>

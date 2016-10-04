@@ -1,13 +1,14 @@
-<% if category.title == 'Ruby' %>
+<% if category.title == 'Ruby on Rails' %>
   <span class='badge alert-danger'>
-<% elsif category.title == 'Funny' %>
+<% elsif category.title == 'C#' %>
   <span class='badge alert-success'>
-<% elsif category.title == 'News' %>
+<% elsif category.title == 'Unity' %>
   <span class='badge progress-bar-info'>
 <% elsif category.title == 'Javascript' %>
   <span class='badge progress-bar-warning'>
 <% elsif category.title == 'Git' %>
   <span class='badge progress-bar-primary'>
 <% end %>
+  <span class='badge progress-bar-primary'>
   <%= category.title %>
 </span>
